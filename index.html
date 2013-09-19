@@ -8,10 +8,12 @@
 <div class="pure-g">
   <div class="pure-u-1-3" ng-controller="ReposController">
     <h2>Repos</h2>
-    <h4 ng-repeat="repo in repos">{{ repo.name }}</h4>
+    <h4 ng-repeat="repo in repos" ng-click="clickedOnRepo(repo)">{{ repo.name }}</h4>
   </div>
-  <div class="pure-u-2-3">
-    <h2>Files</h2>
+  <div class="pure-u-2-3" ng-controller="FilesController">
+    <h2>Files of {{ currentRepo.name }}</h2>
+
+    <h4 ng-repeat="file in files">{{ file.name }}</h4>
   </div>
 </div>
 
@@ -19,5 +21,7 @@
 <script type="text/javascript" src="scripts/app.js"></script>
 <script type="text/javascript" src="scripts/body_controller.js"></script>
 <script type="text/javascript" src="scripts/repos_controller.js"></script>
+<script type="text/javascript" src="scripts/files_controller.js"></script>
+<script type="text/javascript" src="scripts/global_state.js"></script>
 </body>
 </html>
